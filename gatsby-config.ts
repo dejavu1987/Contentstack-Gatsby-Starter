@@ -1,9 +1,9 @@
 // Module dependency
 
-require('ts-node').register({
+require("ts-node").register({
   compilerOptions: {
-      module: 'commonjs',
-      target: 'es2017',
+    module: "commonjs",
+    target: "es2017",
   },
 })
 
@@ -25,6 +25,9 @@ const hostedUrl = CONTENTSTACK_HOSTED_URL || "http://localhost:9000"
 const cdnHost = CONTENTSTACK_API_HOST?.replace(/api/g, "cdn")
 
 module.exports = {
+  flags: {
+    PARALLEL_QUERY_RUNNING: false,
+  },
   siteMetadata: {
     title: "Gatsby Sample App",
     description: "This is a sample app build using Gatsby and Contentstack",
